@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Tokyo",
+    "price": 2000,
+    "province": "Tokyo Metropolis",
+    "population": 37435191,
+    "area": 2194
+  },
+  {
+    "id": 2,
+    "name": "New York",
+    "price": 1500,
+    "province": "New York",
+    "population": 8419600,
+    "area": 783.8
+  },
+  {
+    "id": 3,
+    "name": "Amsterdam",
+    "price": 150,
+    "province": "North Holland",
+    "population": 872757,
+    "area": 219.3
+  },
+  {
+    "id": 4,
+    "name": "Sydney",
+    "price": 3000,
+    "province": "New South Wales",
+    "population": 5312163,
+    "area": 12368
+  },
+  {
+    "id": 5,
+    "name": "Cape Town",
+    "price": 2000,
+    "province": "Western Cape",
+    "population": 433688,
+    "area": 400.3
+  }
+]

@@ -1,0 +1,13 @@
+<div>
+  <button (click)="rate(1)" class="bg-green-700">+1</button>
+  <button (click)="rate(-1)" class="bg-red-700">-1</button>
+  <button (click)="favorite()" class="bg-[#333333]">favorite</button>
+</div>
+<div *ngIf="city">
+  <span [hidden]="!isFavorite">Favorite!</span>
+  <h1 class="text-xl font-bold italic">Details:</h1>
+  <p>City: {{ city.name }}</p>
+  <p>Province: {{ city.province }}</p>
+  <p>Population: {{ city.population }}</p>
+  <p>Area: {{ city.area }}</p>
+</div>
