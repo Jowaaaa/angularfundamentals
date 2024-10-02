@@ -4,7 +4,7 @@ export class City {
     public name: string,
     public province: string,
     public rating: number,
-    public price: number,
+    public price?: number,
     public population?: number,
     public area?: number,
     public favorite?: boolean

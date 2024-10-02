@@ -1,0 +1,113 @@
+<main class="main content-center text-center">
+  <p>we zijn vandaag in {{ city }}</p>
+  <div class="grid grid-cols-2">
+    <div>
+      <h2 class="text-xl italic font-bold">Cities</h2>
+      <li class="list-none" (click)="getCity(city)" *ngFor="let city of cities">
+        {{ city.name }}
+        <span class="bg-blue-400" *ngIf="city.favorite">Favorite!</span>
+        <span class="bg-gray-600">{{ city.rating }}</span>
+
+        <!-- <span *ngIf="city.population"
+                >population: {{ city.population }}
+              </span>
+              <span *ngIf="city.area">area: {{ city.area }} km2 </span> -->
+      </li>
+      <div class="flex justify-center">
+        <input
+          class="mx-2 rounded-xl text-center"
+          type="text"
+          #txtNewCity
+          placeholder="nieuwe city"
+        />
+        <input
+          class="mx-2 rounded-xl text-center"
+          type="number"
+          #txtNewPop
+          placeholder="populatie"
+        />
+        <button
+          class="h-7 w-10 bg-gray-300 shadow-lg shadow-gray-600 hover:bg-gray-700 ease-in-out hover:text-gray-300 duration-300 rounded-md"
+          (click)="handleKey(txtNewPop, txtNewPop)"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+    <div>
+      <app-city-details [city]="currentCity"></app-city-details>
+    </div>
+    <div>
+      <h2 class="pt-[5%] text-xl italic font-bold">Cars</h2>
+
+      <li
+        class="list-none"
+        (click)="showCarDetails(car)"
+        *ngFor="let car of car"
+      >
+        Merk: {{ car.brand }} Model: {{ car.model }}
+      </li>
+    </div>
+  </div>
+  <div>
+    <input
+      class="rounded-xl text-center"
+      type="text"
+      #divColor
+      placeholder="enter a color"
+    />
+    <!--[(ngModel)]="" -->
+    <button
+      class="mx-2 p-2 bg-gray-300 shadow-lg shadow-gray-600 hover:bg-gray-700 ease-in-out hover:text-gray-300 duration-300 rounded-md"
+      (click)="addColor(divColor)"
+    >
+      Add color
+    </button>
+    <div
+      class="mx-auto pt-5 text-center"
+      style="width: 100px; height: 100px; border: 1px solid"
+      [style.background-color]="bgColor"
+    ></div>
+  </div>
+  <div>
+    <input
+      class="rounded-xl text-center"
+      type="text"
+      #search
+      placeholder="enter a movie..."
+    />
+    <button (click)="searchMovies(search.value)">search</button>
+  </div>
+  <div class="grid grid-cols-3 gap-x-2 gap-y-4">
+    <li *ngFor="let movie of movies" class="list-group-item list-none">
+      <div
+        class="grid grid-cols-2 border border-gray-950 rounded-md mx-auto p-10 space-y-3"
+      >
+        <div>
+          <img
+            [src]="movie.Poster"
+            class="w-[100px] h-[150px] shadow-md shadow-black"
+          />
+        </div>
+        <div>
+          {{ movie.Title }}
+          -
+          {{ movie.Year }}
+          @if (movies) {
+          <button
+            [routerLink]="['/details', movie.imdbID]"
+            class="border-gray-500 border-2 rounded-md"
+          >
+            Details {{ movie.imdbID }}</button
+          >}
+        </div>
+        <!-- (click)="getDetails(movie.imdbID)" -->
+        <!-- <li *ngFor="let detail of movie">
+                {{ detail.imdbRating }}
+              </li>
+              } -->
+      </div>
+    </li>
+  </div>
+  <app-button />
+</main>

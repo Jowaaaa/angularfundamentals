@@ -1,6 +1,27 @@
-<div>
-  <p>Title: {{ movie?.Title }}</p>
-  <p>Year: {{ movie?.Year }}</p>
-  <p>Rating: {{ movie?.imdbRating }}</p>
-  <p>Metascore: {{ movie?.Metascore }}</p>
+<div *ngIf="movie">
+  <img src="{{ movie.Poster }}" width="250" height="500" />
+  <table class="pt-10 table-fixed mx-auto border border-gray-700 rounded-md">
+    <thead class="bg-black/50 text-gray-200">
+      <tr class="border-separate">
+        <th class="px-6 py-3">Title</th>
+        <th class="px-6 py-3">Year</th>
+        <th class="px-6 py-3">Rating</th>
+        <th class="px-6 py-3">Metascore</th>
+        <th class="px-6 py-3">Genre</th>
+        <th class="px-6 py-3">Director</th>
+        <th class="px-6 py-3">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="px-6 py-3">{{ movie?.Title }}</td>
+        <td class="px-6 py-3">{{ movie?.Year }}</td>
+        <td class="px-6 py-3">{{ movie?.imdbRating }}</td>
+        <td class="px-6 py-3">{{ movie?.Metascore }}</td>
+        <td class="px-6 py-3">{{ movie?.Genre }}</td>
+        <td class="px-6 py-3">{{ movie?.Director }}</td>
+        <td class="px-6 py-3">{{ movie?.Type }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
